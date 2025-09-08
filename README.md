@@ -1,3 +1,23 @@
+# Blog App
+
+A simple React-based Blog Application where users can view, create, and manage blog posts. This project demonstrates React development, component-based architecture, and state management.
+
+## Features
+
+- View a list of blogs with title, and author.
+- Create new blog posts.
+- Delete existing blog posts.
+- Responsive UI for desktop and mobile.
+- Uses a **fake API** (`db.json`) to store blogs, allowing **GET**, **POST**, and **DELETE** operations.
+
+
+## Technologies Used
+
+- **Frontend:** React, Material-UI (MUI), Tailwind CSS
+- **Backend:** JSON Server (fake API with `db.json`)
+- **State Management:** React hooks
+- **Version Control:** Git & GitHub
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

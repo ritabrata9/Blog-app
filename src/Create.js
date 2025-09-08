@@ -7,10 +7,11 @@ const Create = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Ahona');
     const [isAdded, setisAdded] = useState(false);
+    const authors = ["Ritabrata", "Ahona", "Rohan", "Aditya"]; // your list of authors
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = { title, body, author };
-
         fetch('http://localhost:8000/blogs', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
@@ -19,10 +20,10 @@ const Create = () => {
             setisAdded(true);
         });
     };
-    
+
     // ✅ Conditional redirect
     if (isAdded) {
-        return <Navigate to="/" replace state = {{blog: {author}}}/>;
+        return <Navigate to="/" replace state={{ blog: { author } }} />;
     }
     return (
         <div className="create">
@@ -49,12 +50,16 @@ const Create = () => {
                 <select
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
-                    className="w-full p-[6px_10px] my-[10px] border border-[#ddd] box-border block">
-                    <option value="Ritabrata">Ritabrata</option>
-                    <option value="Ahona">Ahona</option>
+                    className="w-full p-[6px_10px] my-[10px] border border-[#ddd] box-border block"
+                >
+                    {authors.map((name) => (
+                        <option key={name} value={name}>
+                            {name}
+                        </option>
+                    ))}
                 </select>
                 <button
-                // triggers form submission by default
+                    // triggers form submission by default
                     className="bg-[#f1356d] text-white border-0 p-2 rounded-lg cursor-pointer">Add Blog</button>
             </form>
         </div>
