@@ -33,7 +33,7 @@ const BlogList = ({ blogs, title }) => {
             {/* creating template for interating thr
             u blogs array and printing properly */}
             {blogs.slice().reverse().map((blog) => (
-                <div className="blog-preview" key={blog.id}>
+                <div className="blog-preview" key={blog.id} title='View Blog'>
                     {/* key is unique value that react uses to keep track */}
                     <div className="flex justify-between items-center">
 
@@ -41,12 +41,14 @@ const BlogList = ({ blogs, title }) => {
 
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <h2>{blog.title}</h2>
+
                             </div>
                             <p>Written by {blog.author}</p>
                         </Link>
 
                         <div className="relative group">
                             <IconButton
+                                title="Delete blog"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     handleClick(blog.id);
@@ -61,15 +63,7 @@ const BlogList = ({ blogs, title }) => {
                                 }}
                             >
                                 <DeleteIcon color="inherit" />
-                            </IconButton>
-
-                            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2
-        opacity-0 invisible group-hover:opacity-100 group-hover:visible
-        transition-all duration-200 ease-in-out
-        bg-gray-800 text-white text-xs px-2 py-1 rounded
-        whitespace-nowrap pointer-events-none">
-                                Delete blog
-                            </div>
+                            </IconButton>                        
                         </div>
                     </div>
                 </div>

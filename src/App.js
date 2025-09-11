@@ -5,6 +5,7 @@ import Create from './Create';
 import Home from './Home';
 import Navbar from './Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
+            <Route path="/*" element={<NotFound/>}/>
+            {/* /* catches any other route that doesnt exist */}
             {/* /create is the browser path while /Create is the element(arrow function) imported from Create.js */}
           </Routes>
         </div>

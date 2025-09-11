@@ -1,3 +1,10 @@
 {
-  "blogs": []
+  "blogs": [
+    {
+      "id": "c0b7",
+      "title": "Hello there",
+      "body": "this is a new blog App",
+      "author": "Ritabrata"
+    }
+  ]
 }
